@@ -1,4 +1,6 @@
 import { useParams } from 'react-router-dom';
+import NavBar from '../components/NavBar.js';
+import ShoppingCart from '../components/ShoppingCart.js';
 
 function ShopItem(props) {
   const params = useParams();
@@ -7,6 +9,8 @@ function ShopItem(props) {
 
   return (
     <div>
+      <NavBar />
+      <ShoppingCart cartData={props.cartData} />
       <h1>Shop Item</h1>
       <div>
         <img
@@ -14,7 +18,8 @@ function ShopItem(props) {
           alt='Random Hat'
         />
         <p>
-          All Photos are Randomly Selected with 
+          {/* using '&nbsp;' generates an html space at the end of the string that wont be trimmed off later*/}
+          All Photos are Randomly Selected with&nbsp; 
           <a href='https://www.loremflickr.com'>loremflickr</a>
         </p>
         <div className='sidebar'>

@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar.js';
+import ShoppingCart from '../components/ShoppingCart.js';
 
 function Shop(props) {
   return (
     <div>
       <NavBar />
       <h1>Shop Page</h1>
+      <ShoppingCart cartData={props.cartData}/>
       <div>
         {props.shopItems.map(item => {
           return (
@@ -12,13 +15,7 @@ function Shop(props) {
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <p>${item.price}</p>
-              <a href={`/shop/${item.id}`}>Buy Now</a>
-              {/* <input type='number' step='1' min='0' /> */}
-              {/* <button
-                onClick={props.addToCart}
-                value={JSON.stringify(item)}
-              >Add To Cart
-              </button> */}
+              <Link to={`/shop/${item.id}`}>Buy Now</Link>
             </div>
           )
         })}

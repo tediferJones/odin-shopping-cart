@@ -7,6 +7,7 @@ import './App.css';
 
 function App() {
   const [cartData, setCartData] = useState([]);
+  const [itemQty, setItemQty] = useState(1);
 
   // This is our mock data, in a real world scenario this data should be acquired through a database lookup
   // Because of the way react works, we have to hardcode id numbers,
@@ -26,21 +27,29 @@ function App() {
     }
   }
 
-  function addToCart(e) {
-    e.preventDefault();
-    const itemToAdd = shopItems.filter(item => item.id === Number(e.target.itemId.value))[0];
+  function itemQtyChangeHandler(e) {
+    if (e.target.value < 1) {
+      setItemQty(1);
+    } else {
+      setItemQty(Number(e.target.value));
+    }
+  }
 
-    if (cartData.map(item => item.id).includes(Number(e.target.itemId.value))) {
+  function addToCart(e) {
+    const itemToAdd = shopItems.filter(item => item.id === Number(e.target.value))[0];
+
+    if (cartData.map(item => item.id).includes(Number(e.target.value))) {
       setCartData(cartData.map(item => {
         if (item.id === itemToAdd.id) {
-          item.quantity = item.quantity + Number(e.target.quantity.value);
+          item.quantity = item.quantity + itemQty;
         }
         return item;
       }))
     } else {
-      itemToAdd.quantity = Number(e.target.quantity.value);
+      itemToAdd.quantity = itemQty
       setCartData(cartData.concat(itemToAdd));
     }
+    setItemQty(1);
   }
 
   return (
@@ -66,6 +75,8 @@ function App() {
             cartData={cartData}
             shopItems={shopItems}
             addToCart={addToCart}
+            itemQty={itemQty}
+            itemQtyChangeHandler={itemQtyChangeHandler}
           />}
         />
       </Routes>
@@ -75,6 +86,9 @@ function App() {
 
 // TO-DO
 //    - add multiple images to each item, see loremflickr.com for more info
+//    - Consider adding quantities to our mock items, 
+//      - dont let the item quantity go above the total quantity
 //    - WRITE SOME TESTS FOR YOUR COMPONENTS
+//    - Add styling
 
 export default App;

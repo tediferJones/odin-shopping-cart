@@ -26,6 +26,20 @@ function ShopItem(props) {
           <h3>{currentItem.name}</h3>
           <p>{currentItem.description}</p>
           <p>${currentItem.price}</p>
+          <button
+            onClick={props.itemQtyChangeHandler}
+            value={props.itemQty - 1}
+          >-</button>
+          <h4>{props.itemQty}</h4>
+          <button
+            onClick={props.itemQtyChangeHandler}
+            value={props.itemQty + 1}
+          >+</button>
+          <button 
+            onClick={props.addToCart}
+            value={currentItem.id}
+          >Add to Cart</button>
+          {/*
           <form onSubmit={props.addToCart}>
             <input 
               type='hidden' 
@@ -40,6 +54,7 @@ function ShopItem(props) {
             />
             <button>Add to Cart</button>
           </form>
+          */}
         </div>
       </div>
     </div>

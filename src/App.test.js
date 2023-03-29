@@ -77,3 +77,6 @@ describe('Shopping Cart Tests', () => {
   });
 });
 
+// What else do we want to test?
+//    - Verify that addToCart will merge quantities of the same item
+

@@ -24,6 +24,11 @@ function App() {
       description,
       price,
       id,
+      images: [
+        `https://loremflickr.com/512/512/${name}?lock=1`,
+        `https://loremflickr.com/512/512/${name}?lock=2`,
+        `https://loremflickr.com/512/512/${name}?lock=3`,
+      ],
     }
   }
 
@@ -59,6 +64,7 @@ function App() {
           path='/'
           element={<Home
             cartData={cartData}
+            shopItems={shopItems}
           />}
         />
         <Route
@@ -85,7 +91,7 @@ function App() {
 }
 
 // TO-DO
-//    - add multiple images to each item, see loremflickr.com for more info
+//    - Maybe try to make image slider transitions smoother
 //    - Consider adding quantities to our mock items, 
 //      - dont let the item quantity go above the total quantity
 //    - WRITE SOME TESTS FOR YOUR COMPONENTS

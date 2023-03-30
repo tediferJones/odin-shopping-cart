@@ -11,12 +11,16 @@ function Shop(props) {
       <div>
         {props.shopItems.map(item => {
           return (
-            <div key={item.id}>
+            <Link to={`/shop/${item.id}`} key={item.id}>
+              <img 
+                src={item.images[0]}
+                alt={item.name}
+              />
               <h3>{item.name}</h3>
-              <p>{item.description}</p>
+              {/* <p>{item.description}</p> */}
               <p>${item.price}</p>
-              <Link to={`/shop/${item.id}`}>Buy Now</Link>
-            </div>
+              {/* <Link to={`/shop/${item.id}`}>Buy Now</Link> */}
+            </Link>
           )
         })}
       </div>

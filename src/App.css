@@ -1,0 +1,79 @@
+:root {
+  --primary: #F4F9F4;
+  --secondary: #A7D7C5;
+  --thirdary: #74B49B;
+  --accent: #5C8D89 ;
+}
+
+body {
+  font-family: Raleway;
+  font-size: 24px;
+  background-color: var(--primary);
+  margin: 0;
+  /* SCALE FONT SIZE WITH WINDOW WIDTH, SMALLER WIDTH = BIGGET FONT*/
+}
+
+.itemContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.itemDetails {
+  /* width: 70vw; */
+  flex-grow: 1;
+}
+
+.imageSliderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.sidebar {
+  flex-grow: 1;
+  background-color: var(--secondary);
+  /* width: 30vw; */
+  /*
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  */ 
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.quantityButton {
+  height: 2em;
+  width: 2em;
+  border-radius: 2em;
+  font-weight: 900;
+}
+
+button {
+  font-family: Raleway;
+  font-size: 48px;
+  color: var(--primary);
+  border: none;
+  background-color: var(--accent);
+}
+
+img {
+  width: 50vw;
+}
+
+/*
+
+Pallete: https://colorhunt.co/palette/f4f9f4a7d7c574b49b5c8d89
+
+*/

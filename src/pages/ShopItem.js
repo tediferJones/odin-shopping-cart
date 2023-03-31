@@ -13,7 +13,7 @@ function ShopItem(props) {
         src={imageLink}
         alt={`Random ${currentItem.name} ${index + 1}`}
         key={`${currentItem.name} ${index + 1}`}
-        style={index == 0 ? { display: 'block' } : { display: 'none' } }
+        style={index === 0 ? { display: 'block' } : { display: 'none' } }
       />
     );
   });
@@ -40,29 +40,37 @@ function ShopItem(props) {
     <div>
       <NavBar />
       <ShoppingCart cartData={props.cartData} />
-      <h1>Shop Item</h1>
-      <div>
-        <button onClick={nextImage} value='-1'>PREVIOUS</button>
-        {images}
-        <button onClick={nextImage} value='1'>NEXT</button>
-        <p>
-          {/* using '&nbsp;' generates an html space at the end of the string that wont be trimmed off later*/}
-          All Photos are Randomly Selected with&nbsp; 
-          <a href='https://www.loremflickr.com'>loremflickr</a>
-        </p>
+      <div className='itemContainer'>
+        <div className='itemDetails'>
+          <h1>Shop Item</h1>
+          <div className='imageSliderContainer'>
+            <button onClick={nextImage} value='-1'>{'<'}</button>
+            {images}
+            <button onClick={nextImage} value='1'>{'>'}</button>
+          </div>
+          <p>
+            {/* using '&nbsp;' generates an html space at the end of the string that wont be trimmed off later*/}
+            All Photos are Randomly Selected with&nbsp; 
+            <a href='https://www.loremflickr.com'>loremflickr</a>
+          </p>
+        </div>
         <div className='sidebar'>
           <h3>{currentItem.name}</h3>
           <p>{currentItem.description}</p>
           <p>${currentItem.price}</p>
-          <button
-            onClick={props.itemQtyChangeHandler}
-            value={props.itemQty - 1}
-          >-</button>
-          <h4>{props.itemQty}</h4>
-          <button
-            onClick={props.itemQtyChangeHandler}
-            value={props.itemQty + 1}
-          >+</button>
+          <div className='quantity'>
+            <button
+              className='quantityButton'
+              onClick={props.itemQtyChangeHandler}
+              value={props.itemQty - 1}
+            >-</button>
+            <h4>{props.itemQty}</h4>
+            <button
+              className='quantityButton'
+              onClick={props.itemQtyChangeHandler}
+              value={props.itemQty + 1}
+            >+</button>
+          </div>
           <button 
             onClick={props.addToCart}
             value={currentItem.id}

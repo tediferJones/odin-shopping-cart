@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar.js';
 function App(props) {
   return (
     <div>
-      <NavBar />
+      <NavBar cartData={props.cartData} />
       <h1>Hello World!</h1>
       <div>
         <h3>New Items</h3>

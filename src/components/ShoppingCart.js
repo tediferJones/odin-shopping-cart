@@ -10,7 +10,7 @@ function ShoppingCart(props) {
   }
 
   return (
-    <div>
+    <div className='cartContainer hidden'>
       <h3>Your Cart ({props.cartData.length})</h3>
       {props.cartData.map(item => {
         return (

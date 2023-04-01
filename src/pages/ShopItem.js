@@ -37,9 +37,9 @@ function ShopItem(props) {
   }
 
   return (
-    <div>
-      <NavBar />
-      <ShoppingCart cartData={props.cartData} />
+    <div className='pageContainer'>
+      <NavBar cartData={props.cartData} />
+      {/* <ShoppingCart cartData={props.cartData} /> */}
       <div className='itemContainer'>
         <div className='itemDetails'>
           <h1>Shop Item</h1>

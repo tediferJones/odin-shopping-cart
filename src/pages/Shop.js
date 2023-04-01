@@ -5,7 +5,7 @@ import ShoppingCart from '../components/ShoppingCart.js';
 function Shop(props) {
   return (
     <div>
-      <NavBar />
+      <NavBar cartData={props.cartData}/>
       <h1>Shop Page</h1>
       <ShoppingCart cartData={props.cartData}/>
       <div>

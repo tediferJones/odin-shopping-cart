@@ -6,7 +6,7 @@
 }
 
 html, body {
-  font-family: Raleway;
+  font-family: sans-serif, Raleway;
   font-size: 24px;
   background-color: var(--primary);
   margin: 0;
@@ -47,13 +47,56 @@ a {
 .cartIcon {
   cursor: pointer;
   padding: 1em;
-  margin-right: 1em;
+}
+
+.active {
+  background-color: var(--thirdary);
+}
+
+.cartContainer {
+  background-color: var(--thirdary);
+  padding: 2em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  margin-left: 0;
+  margin-right: 0;
+  border: 0.25em solid var(--accent);
+  border-radius: 0.5em;
+}
+
+.cartItem {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cartItem * {
+  width: calc(100% / 3)
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
 .itemContainer {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+}
+
+.itemQuantity {
+  display: flex;
+  justify-content: center;
+}
+
+.itemTotal {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .itemDetails {
@@ -83,6 +126,10 @@ a {
   flex-direction: column;
   justify-content: center;
   gap: 2em;
+}
+
+.sidebar h1,h4 {
+  padding: 0 2rem;
 }
 
 .quantity {

@@ -57,15 +57,19 @@ function ShopItem(props) {
       {/* <ShoppingCart cartData={props.cartData} /> */}
       <div className='itemContainer'>
         <div className='itemDetails'>
-          <h1>Shop Item</h1>
+          <h1 className='title'>Shop Item</h1>
           <div className='imageSliderContainer'>
-            <button onClick={nextImage} value='-1'>
-              <h1 value='-1'>{'<'}</h1>
-            </button>
+            <h1
+              className='sliderButton'
+              onClick={nextImage}
+              value='-1'
+            >{'<'}</h1>
             {images}
-            <button onClick={nextImage} value='1'>
-              <h1 value='1'>{'>'}</h1>
-            </button>
+            <h1
+              className='sliderButton'
+              onClick={nextImage}
+              value='1'
+            >{'>'}</h1>
           </div>
           <p>
             {/* using '&nbsp;' generates an html space at the end of the string that wont be trimmed off later*/}
@@ -91,6 +95,7 @@ function ShopItem(props) {
             >+</button>
           </div>
           <button 
+            className='addToCartButton'
             onClick={props.addToCart}
             value={currentItem.id}
           >Add to Cart</button>

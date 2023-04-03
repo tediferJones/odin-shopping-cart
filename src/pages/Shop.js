@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar.js';
-import ShoppingCart from '../components/ShoppingCart.js';
+// import ShoppingCart from '../components/ShoppingCart.js';
 
 function Shop(props) {
   return (
     <div>
       <NavBar cartData={props.cartData}/>
-      <h1>Shop Page</h1>
-      <ShoppingCart cartData={props.cartData}/>
-      <div>
+      <h1 className='title'>Shop Page</h1>
+      {/* <ShoppingCart cartData={props.cartData}/> */}
+      <div className='shopContainer'>
         {props.shopItems.map(item => {
           return (
-            <Link to={`/shop/${item.id}`} key={item.id}>
+            <Link
+              to={`/shop/${item.id}`}
+              key={item.id}
+              className='shopLink'>
               <img 
                 src={item.images[0]}
                 alt={item.name}

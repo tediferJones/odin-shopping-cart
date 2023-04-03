@@ -16,7 +16,12 @@ function App() {
     newItem('Hat', 'Keeps your head warm!', 4.99, 1),
     newItem('Jacket', 'Keeps your body warm!', 19.99, 2),
     newItem('Socks', 'Keeps your feet warm!', 3.99, 3),
-  ]
+    newItem('Shoes', 'Keeps your feet dry!', 49.99, 4),
+    newItem('Pants', 'Ya know... pants', 24.99, 5),
+    newItem('Shorts', `They're the like pants, but short`, 24.99, 6),
+    newItem('Shirt', 'Keeps your shirt on', 12.99, 7),
+    newItem('Underwear', 'Goes on over the pants', 6.99),
+  ];
 
   function newItem(name, description, price, id) {
     return {
@@ -96,5 +101,6 @@ function App() {
 //      - dont let the item quantity go above the total quantity
 //    - WRITE SOME TESTS FOR YOUR COMPONENTS
 //    - Add styling
+//      - Add a big slider to our homepage, show multiple items
 
 export default App;

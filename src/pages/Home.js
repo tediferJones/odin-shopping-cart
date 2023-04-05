@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar.js';
 
 function App(props) {
+  function sideScroll(e) {
+    e.currentTarget.scrollLeft += e.deltaX;
+  }
+
   return (
     <div>
       <NavBar cartData={props.cartData} />
@@ -9,7 +13,7 @@ function App(props) {
       <div>
         <h3 className='title'>New Items</h3>
         {/* Sort by ID, greatest to least */}
-        <div className='shopContainer'>
+        <div className='shopContainer scrollable' onWheel={sideScroll}>
           {props.shopItems.sort((a, b) => b.id - a.id).map(item => {
             return (
               <Link
@@ -29,7 +33,7 @@ function App(props) {
       <div>
         <h3 className='title'>Best Sellers</h3>
         {/* Sort by Price, greatest to least */}
-        <div className='shopContainer'>
+        <div className='shopContainer scrollable' onWheel={sideScroll}>
           {props.shopItems.sort((a, b) => b.price - a.price).map (item => {
             return (
               <Link 
@@ -46,6 +50,7 @@ function App(props) {
           }).slice(0, 4)}
         </div>
       </div>
+      <div className='fakeFooter'></div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import NavBar from '../components/NavBar.js';
-// import ShoppingCart from '../components/ShoppingCart.js';
 
 function ShopItem(props) {
   const params = useParams();
@@ -16,7 +15,6 @@ function ShopItem(props) {
         className={index === 0 ? 'shown' : 'hidden'}
       />
     );
-    // style={index === 0 ? { display: 'block' } : { display: 'none' } }
   });
 
   function nextImage(e) {
@@ -34,27 +32,11 @@ function ShopItem(props) {
         break;
       }
     }
-
-    // for (let i = 0; i < images.length; i++) {
-    //   if (images[i].attributes.style.value === 'display: block;') {
-    //     const newImageIndex = i + Number(e.target.value);
-    //     images[i].attributes.style.value = 'display: none;';
-    //     if (newImageIndex < 0) {
-    //       images[(images.length - 1)].attributes.style.value = 'display: block;';
-    //     } else if (newImageIndex > images.length - 1) {
-    //       images[0].attributes.style.value = 'display: block;';
-    //     } else {
-    //       images[newImageIndex].attributes.style.value = 'display: block;';
-    //     }
-    //     break
-    //   }
-    // }
   }
 
   return (
     <div className='pageContainer'>
       <NavBar cartData={props.cartData} />
-      {/* <ShoppingCart cartData={props.cartData} /> */}
       <div className='itemContainer'>
         <div className='itemDetails'>
           <h1 className='title'>Shop Item</h1>

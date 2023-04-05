@@ -19,6 +19,10 @@ html, body {
   height: 100%;
 }
 
+.fakeFooter {
+  height: 1rem;
+}
+
 .pageContainer {
   height: 100%;
   display: flex;
@@ -96,6 +100,24 @@ hr {
   /* overflow-y: hidden;
   overflow-x: scroll; */
 
+  /*
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  */
+  /*
+  flex-wrap: wrap;
+  justify-content: center;
+  */
+}
+
+.scrollable {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.notScrollable {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -114,8 +136,13 @@ hr {
 }
 
 .shopLink img {
+  /*
   height: 256px;
   width: 256px;
+  */
+
+  height: max(192px, 18vw);
+  width: max(192px, 18vw);
 }
 
 .itemContainer {
@@ -234,6 +261,7 @@ img {
   */
 
   width: max(50vw, 256px);
+  height: max(50vw, 256px);
 }
 
 .hidden {

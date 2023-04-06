@@ -20,7 +20,7 @@ function App() {
     newItem('Pants', 'Ya know... pants', 24.99, 5),
     newItem('Shorts', `They're the like pants, but short`, 24.99, 6),
     newItem('Shirt', 'Keeps your shirt on', 12.99, 7),
-    newItem('Underwear', 'Goes on over the pants', 6.99),
+    newItem('Underwear', 'Goes on over the pants', 6.99, 8),
   ];
 
   function newItem(name, description, price, id) {
@@ -95,12 +95,6 @@ function App() {
   )
 }
 
-// TO-DO
-//    - Maybe try to make image slider transitions smoother
-//    - Consider adding quantities to our mock items, 
-//      - dont let the item quantity go above the total quantity
-//    - WRITE SOME TESTS FOR YOUR COMPONENTS
-//    - Add styling
-//      - Add a big slider to our homepage, show multiple items
+// For ghPages: Switch from BrowserRouter to HashRouter
 
 export default App;

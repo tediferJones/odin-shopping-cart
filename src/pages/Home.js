@@ -9,7 +9,7 @@ function App(props) {
   return (
     <div>
       <NavBar cartData={props.cartData} />
-      <h1 className='title'>Hello World!</h1>
+      <h1 className='title'>Welcome!</h1>
       <div>
         <h3 className='title'>New Items</h3>
         {/* Sort by ID, greatest to least */}

@@ -8,8 +8,8 @@ describe('Route Tests', () => {
   it('Render home page', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading').textContent)
-      .toMatch(/Hello World!/i);
+    expect(screen.getByRole('heading', { level: 1 }).textContent)
+      .toMatch(/Welcome!/i);
   });
 
   it('Render shop page', () => {
@@ -20,7 +20,7 @@ describe('Route Tests', () => {
     });
     
     expect(screen.getByRole('heading', { level: 1 }).textContent)
-      .toMatch(/Shop Page/i);
+      .toMatch(/Shop/i);
   });
 
 
@@ -32,16 +32,15 @@ describe('Route Tests', () => {
     });
     
     expect(screen.getByRole('heading', { level: 1 }).textContent)
-      .toMatch(/Shop Page/i);
+      .toMatch(/Shop/i);
 
-    const shopItemLinks = screen.getAllByRole('link', { name: 'Buy Now' });
+    const shopItemLinks = screen.getAllByRole('link', { name: 'Hat Hat $4.99' });
 
     act(() => {
       userEvent.click(shopItemLinks[0]);
     });
 
-    expect(screen.getByRole('heading', { level: 1 }).textContent)
-      .toMatch(/Shop Item/i);
+    expect(screen.getByText('Hat').textContent).toMatch('Hat')
   });
 });
 
@@ -76,7 +75,4 @@ describe('Shopping Cart Tests', () => {
       .toMatch(/\$69\.90/i);
   });
 });
-
-// What else do we want to test?
-//    - Verify that addToCart will merge quantities of the same item
 

@@ -5,7 +5,7 @@ function Shop(props) {
   return (
     <div>
       <NavBar cartData={props.cartData}/>
-      <h1 className='title'>Shop Page</h1>
+      <h1 className='title'>Shop</h1>
       <div className='shopContainer notScrollable'>
         {props.shopItems.map(item => {
           return (

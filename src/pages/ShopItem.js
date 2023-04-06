@@ -39,7 +39,6 @@ function ShopItem(props) {
       <NavBar cartData={props.cartData} />
       <div className='itemContainer'>
         <div className='itemDetails'>
-          <h1 className='title'>Shop Item</h1>
           <div className='imageSliderContainer'>
             <h1
               className='sliderButton'

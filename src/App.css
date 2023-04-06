@@ -10,7 +10,6 @@ html, body {
   font-size: 24px;
   background-color: var(--primary);
   margin: 0;
-  /* SCALE FONT SIZE WITH WINDOW WIDTH, SMALLER WIDTH = BIGGET FONT*/
   width: 100%;
   height: 100%;
 }
@@ -96,19 +95,6 @@ hr {
   margin: 2em;
   padding: 1em;
   border-radius: 1em;
-
-  /* overflow-y: hidden;
-  overflow-x: scroll; */
-
-  /*
-  display: flex;
-  overflow: hidden;
-  justify-content: space-between;
-  */
-  /*
-  flex-wrap: wrap;
-  justify-content: center;
-  */
 }
 
 .scrollable {
@@ -136,11 +122,6 @@ hr {
 }
 
 .shopLink img {
-  /*
-  height: 256px;
-  width: 256px;
-  */
-
   height: max(192px, 18vw);
   width: max(192px, 18vw);
 }
@@ -163,11 +144,12 @@ hr {
 }
 
 .itemDetails {
-  /* width: 70vw; */
+  margin-top: 2em;
   flex-grow: 1;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .itemDetails p {
@@ -184,7 +166,6 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 1em; */
 }
 
 .sliderButton {
@@ -208,13 +189,6 @@ hr {
 .sidebar {
   flex-grow: 1;
   background-color: var(--secondary);
-  /* width: 30vw; */
-  /*
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  */ 
 
   display: flex;
   flex-direction: column;
@@ -255,11 +229,6 @@ button {
 }
 
 img {
-  /*
-  width: 50vw;
-  height: 50vw;
-  */
-
   width: max(50vw, 256px);
   height: max(50vw, 256px);
 }

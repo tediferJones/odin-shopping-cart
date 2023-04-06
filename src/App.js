@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.js';
 import Shop from './pages/Shop.js';
 import ShopItem from './pages/ShopItem.js';
@@ -63,7 +63,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path='/'
@@ -91,7 +91,7 @@ function App() {
           />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
